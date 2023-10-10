@@ -58,16 +58,8 @@ restart: ## Restarts the application
 restart: stop start
 .PHONY: restart
 
-status: ## Status for the services (alias to docker-compose ps)
-	docker-compose ps
-.PHONY: status
-
-shell: ## Initializes a shell
-	docker-compose run --rm test-app bash
-.PHONY: shell
-
 test: ## Run tests for the file passed as parameter or the entire suite if none passed.
-	docker-compose run --rm test-app yarn test
+	docker-compose exec test-app yarn test
 .PHONY: test
 
 ## -------
@@ -77,3 +69,11 @@ test: ## Run tests for the file passed as parameter or the entire suite if none 
 logs: ## View logs
 	docker-compose logs -f test-app
 .PHONY: logs
+
+status: ## Status for the services (alias to docker-compose ps)
+	docker-compose ps
+.PHONY: status
+
+shell: ## Initializes a shell
+	docker-compose exec test-app sh
+.PHONY: shell
