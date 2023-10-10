@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  test-app:
+    container_name: test-app
+    build:
+      context: .
+      target: $TARGET
+      args:
+        NODE_ENV: $NODE_ENV
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+    ports:
+      - $PORT:$PORT
+
+networks:
+  test-network:
+    external: true

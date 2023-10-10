@@ -1,0 +1,4 @@
+- Task https://taskfile.dev/#/
+- Pydoit https://pydoit.org/
+- Just https://github.com/casey/just
+- Makefile 

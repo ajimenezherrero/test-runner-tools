@@ -1,0 +1,31 @@
+{
+  "name": "test-runner-tools",
+  "version": "1.0.0",
+  "description": "Test of different test runner tools with a node service and docker",
+  "main": "src/index.ts",
+  "repository": "https://github.com/ajimenezherrero/test-runner-tools",
+  "author": "ajimenezherrero",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only src/index.ts",
+    "lint": "eslint '*/**/*.ts' --fix",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node build/index.js",
+    "migrate:up": "db-migrate up:all -e default"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.19",
+    "@types/node": "^20.8.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
